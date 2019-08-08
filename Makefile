@@ -1,5 +1,5 @@
 NAME := sshd
-TAG := latest
+TAG := 1.0
 IMAGE_NAME := panubo/$(NAME)
 
 .PHONY: help build push clean

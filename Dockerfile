@@ -1,4 +1,4 @@
-FROM docker.io/alpine:3.6
+FROM alpine:3.10
 
 RUN apk update && \
     apk add bash git openssh rsync augeas shadow && \
@@ -9,6 +9,8 @@ RUN apk update && \
     echo -e "Port 22\n" >> /etc/ssh/sshd_config && \
     cp -a /etc/ssh /etc/ssh.cache && \
     rm -rf /var/cache/apk/*
+
+RUN apk update && apk add ca-certificates emacs
 
 EXPOSE 22
 
